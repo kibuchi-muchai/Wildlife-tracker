@@ -1,0 +1,30 @@
+{{#partial "content"}}
+    <div class="data-image2"></div>
+    <div class="container" id="data">
+        <div class="container">
+            {{#if rangers}}
+                <table class="table table-sm table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">Ranger</th>
+                        <th scope="col">Badge Number</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                    </thead>
+                    {{#each rangers}}
+                        <tbody>
+                        <tr>
+                            <td>{{rangerName}}</td>
+                            <td>{{rangerBadgeNumber}}</td>
+                            <td>{{rangerContact}}</td>
+                            <td><a href="/rangers/{{id}}" class="btn btn-secondary">Details</a></td>
+                        </tr>
+                        </tbody>
+                    {{/each}}
+                </table>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

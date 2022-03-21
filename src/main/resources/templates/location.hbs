@@ -1,0 +1,26 @@
+{{#partial "content"}}
+    <div class="data-image3"></div>
+    <div class="container" id="data">
+        <div class="container">
+            {{#if locations}}
+                <table class="table table-sm table-dark" id="table1">
+                    <thead>
+                    <tr>
+                        <th scope="col">Location</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                    </thead>
+                    {{#each locations}}
+                        <tbody>
+                        <tr>
+                            <td> {{locationName}}</td>
+                            <td><a href="/locations/{{id}}" class="btn btn-secondary">Details</a></td>
+                        </tr>
+                        </tbody>
+                    {{/each}}
+                </table>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

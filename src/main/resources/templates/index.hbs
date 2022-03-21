@@ -1,0 +1,72 @@
+{{#partial "content"}}
+    <div class="data-image">
+        <div class="container" id="index2">
+            <div class="row">
+                <p>Endangered Animals</p>
+                {{#if endangeredSightings}}
+                    <table class="table table-sm table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Health</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Ranger</th>
+
+                        </tr>
+                        </thead>
+                        {{#each endangeredSightings}}
+                            <tbody>
+                            <tr>
+                                <td>{{type}}</td>
+                                <td>{{speciesName}}</td>
+                                <td>{{speciesAge}}</td>
+                                <td>{{speciesHealth}}</td>
+                                <td>{{locationId}}</td>
+                                <td>{{rangerId}}</td>
+                            </tr>
+                            </tbody>
+                        {{/each}}
+                    </table>
+                {{/if}}
+            </div>
+            <div class="row">
+                <p>Non-Endangered Animals</p>
+                {{#if normalSightings}}
+                    <table class="table table-sm table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">Type</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Ranger</th>
+
+                        </tr>
+                        </thead>
+                        {{#each normalSightings}}
+                            <tbody>
+                            <tr>
+                                <td>{{type}}</td>
+                                <td>{{speciesName}}</td>
+                                <td>{{locationId}}</td>
+                                <td>{{rangerId}}</td>
+                            </tr>
+                            </tbody>
+                        {{/each}}
+                    </table>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{/partial}}
+{{#partial "footer"}}
+    <footer>
+        <hr>
+        <p> &copy; Copyright 2022 </p>
+        <p>Author: Kibuchi </p>
+        <p>Email: <a href="#">kibuchi@gmail.com</a></p>
+    </footer>
+{{/partial}}
+
+{{> layout.hbs}}

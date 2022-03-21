@@ -1,0 +1,14 @@
+{{#partial "content"}}
+    <div class="data-image4"></div>
+    <div class="container" id="data">
+        <div class="container">
+            {{#if sightings}}
+                {{#each sightings}}
+                    <p>{{speciesName}}</p>
+                    <a href="/sightings/{{id}}" class="btn btn-success">Information</a>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

@@ -1,0 +1,107 @@
+{{#partial "content"}}
+
+    <div class="data-image4"></div>
+
+    {{#if endangered}}
+        <div class="container" id="data2">
+            <h5 id="data3">Add Endangered Sighting</h5>
+            <hr>
+            <form method="Post" action="/sightendangered">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Wildlife Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Wildlife Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="age">Wildlife Age</label>
+                            <select class="form-control" id="age" name="age">
+                                <option value="Newborn">Newborn</option>
+                                <option value="Young">Young</option>
+                                <option value="Old">Old</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="health">Wildlife Health</label>
+                            <select class="form-control" id="health" name="health">
+                                <option value="Healthy">Healthy</option>
+                                <option value="Sick">Sick</option>
+                                <option value="Malnourished">Malnourished</option>
+                                <option value="Okay">Okay</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="ranger">Ranger</label>
+                            <select class="form-control" id="ranger" name="ranger">
+                                {{#if rangers}}
+                                    {{#each rangers}}
+                                        <option value="{{id}}">{{rangerName}}</option>
+                                    {{/each}}
+                                {{/if}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <select class="form-control" id="location" name="location">
+                                {{#if locations}}
+                                    {{#each locations}}
+                                        <option value="{{id}}">{{locationName}}</option>
+                                    {{/each}}
+                                {{/if}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="data3">Submit</button>
+            </form>
+        </div>
+
+    {{else}}
+
+        <div class="container" id="data2">
+            <h5 id="data3">Add Normal Sighting</h5>
+            <hr>
+            <form method="Post" action="/sightnormal">
+                <div class="form-group">
+                    <label for="name">Wildlife Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Wildlife Name">
+                </div>
+                <div class="form-group">
+                    <label for="ranger">Ranger</label>
+                    <select class="form-control" id="ranger" name="ranger">
+                        {{#if rangers}}
+                            {{#each rangers}}
+                                <option value="{{id}}">{{rangerName}}</option>
+                            {{/each}}
+                        {{/if}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control" id="location" name="location">
+                        {{#if locations}}
+                            {{#each locations}}
+                                <option value="{{id}}">{{locationName}}</option>
+                            {{/each}}
+                        {{/if}}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="data3">Submit</button>
+            </form>
+        </div>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}
